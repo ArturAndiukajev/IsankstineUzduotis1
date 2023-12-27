@@ -8,14 +8,6 @@ int main()
     string tekstas;
     tekstas=skaitymas(failoPav);
     map<string, int> zodziu_kiekis = zodziai(tekstas);
-
-    cout << "Zodziai ir kiek kartu jie pasikartojo:"<<endl;
-    for (const auto& pair : zodziu_kiekis)
-    {
-        if (pair.second>1)
-        {
-            cout<<pair.first<<": "<<pair.second<<" kartus"<<endl;
-        }
-    }
+    isvedimas(zodziu_kiekis, "rezultatai.txt");
     return 0;
 }
