@@ -59,3 +59,47 @@ void isvedimas(map<string, int> zodziu_kiekis, string fileName)
     }
     outputFile.close();
 }
+//----------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------
+void crossReference(const string& tekstas)
+{
+    std::istringstream iss(tekstas);
+    map<string, set<int>> wordOccurrences;
+    string zodis;
+    int eilute = 1;
+    while(getline(iss, zodis, ' '))
+    {
+        while (!isalnum(zodis.front()) && !zodis.empty())
+        {
+            zodis.erase(zodis.begin());
+        }
+        while (!isalnum(zodis.back()) && !zodis.empty())
+        {
+            zodis.pop_back();
+        }
+        transform(zodis.begin(), zodis.end(), zodis.begin(), ::tolower);
+        if (!zodis.empty())
+        {
+            wordOccurrences[zodis].insert(eilute);
+        }
+        if (zodis.find('\n') != string::npos)
+        {
+            eilute++;
+        }
+    }
+    cout<<"Cross-reference tipo lentele:"<<endl;
+    for (const auto& pair : wordOccurrences)
+    {
+        if (pair.second.size() > 1)
+        {
+            cout << pair.first << ": ";
+            for (int line : pair.second)
+            {
+                cout << line << " ";
+            }
+            cout << endl;
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------

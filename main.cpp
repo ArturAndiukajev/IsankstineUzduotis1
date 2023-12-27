@@ -8,6 +8,7 @@ int main()
     string tekstas;
     tekstas=skaitymas(failoPav);
     map<string, int> zodziu_kiekis = zodziai(tekstas);
+    crossReference(tekstas);
     isvedimas(zodziu_kiekis, "rezultatai.txt");
     return 0;
 }
