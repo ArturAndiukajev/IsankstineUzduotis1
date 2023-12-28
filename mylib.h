@@ -30,4 +30,5 @@ map<string,int> zodziuPasikartojimas(const string& tekstas);
 void isvedimas(map<string, int> zodziu_kiekis, string fileName);
 void crossReference(const string& tekstas);
 void rastiURL(const string& tekstas, set<string>& nuoroduAibe);
+void isvedimasURL(set<string>& nuoroduAibe, string fileName);
 #endif // MYLIB_H_INCLUDED

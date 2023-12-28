@@ -18,24 +18,23 @@ string skaitymas(string Fname)
 //--------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------
-map<string,int> zodziuPasikartojimas(const string& tekstas)
-{
-    map<string,int> zodziu_sk;
+map<string, int> zodziuPasikartojimas(const string& tekstas) {
+    map<string, int> zodziu_sk;
     std::istringstream iss(tekstas);
     string zodis;
-    while(iss>>zodis)
+    while (iss >> zodis)
     {
-        while (!isalnum(zodis.front()) && !zodis.empty())
-        {
-            zodis.erase(zodis.begin());
-        }
-        while (!isalnum(zodis.back()) && !zodis.empty())
-        {
-            zodis.pop_back();
-        }
+        // simboliai pradzioj
+        zodis.erase(zodis.begin(), std::find_if(zodis.begin(), zodis.end(), ::isalpha));
+        //simboliai pabaigoj
+        zodis.erase(std::find_if(zodis.rbegin(), zodis.rend(), ::isalpha).base(), zodis.end());
         std::transform(zodis.begin(), zodis.end(), zodis.begin(), ::tolower);
-        zodziu_sk[zodis]++;
+        if (!zodis.empty())
+        {
+            zodziu_sk[zodis]++;
+        }
     }
+
     return zodziu_sk;
 }
 //------------------------------------------------------------------------------------------
@@ -67,20 +66,27 @@ void crossReference(const string& tekstas)
     map<string, set<int>> wordOccurrences;
     string zodis;
     int eilute = 1;
-    while(getline(iss, zodis, ' '))
+
+    while (getline(iss, zodis, '\n'))
     {
-        zodis.erase(remove_if(zodis.begin(), zodis.end(), ::ispunct), zodis.end());
-        transform(zodis.begin(), zodis.end(), zodis.begin(), ::tolower);
-        if (!zodis.empty())
+        std::istringstream lineStream(zodis);  // kiekviena eil atskirai
+
+        while (lineStream >> zodis)
         {
-            wordOccurrences[zodis].insert(eilute);
+            zodis.erase(remove_if(zodis.begin(), zodis.end(), ::ispunct), zodis.end());
+            zodis.erase(std::find_if(zodis.rbegin(), zodis.rend(), ::isalpha).base(), zodis.end());
+            transform(zodis.begin(), zodis.end(), zodis.begin(), ::tolower);
+
+            if (!zodis.empty())
+            {
+                wordOccurrences[zodis].insert(eilute);
+            }
         }
-        if (zodis.find('\n') != string::npos)
-        {
-            eilute++;
-        }
+
+        eilute++;
     }
-    cout<<"Cross-reference tipo lentele:"<<endl;
+
+    cout << "Cross-reference tipo lentele:" << endl;
     for (const auto& pair : wordOccurrences)
     {
         if (pair.second.size() > 1)
@@ -100,10 +106,27 @@ void rastiURL(const string& tekstas, set<string>& nuoroduAibe)
     regex url("(http|https|www)(/|//|://|.|:/)[a-zA-Z0-9./?=_-]+");
     smatch atitikmuo;
     auto paieskosPradzia=tekstas.cbegin();
-    while(regex_search(paieskosPradzia, tekstas.cend(), atitikmuo,url))
+    while(regex_search(tekstas.cbegin(), tekstas.cend(), atitikmuo,url))
     {
         nuoroduAibe.insert(atitikmuo[0]);
         paieskosPradzia=atitikmuo.suffix().first;
     }
 }
 //-----------------------------------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------------------------------
+void isvedimasURL(set<string>& nuoroduAibe, string fileName)
+{
+    ofstream outputFile(fileName);
+    if (!outputFile.is_open())
+    {
+        cerr << "Failo atidarymo klaida: "<<fileName<<endl;
+        return;
+    }
+    for(const auto& url: nuoroduAibe)
+    {
+        outputFile<<url<<endl;
+    }
+    outputFile.close();
+}
+//---------------------------------------------------------------------------------------------------------
