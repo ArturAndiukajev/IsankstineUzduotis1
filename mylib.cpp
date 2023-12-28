@@ -18,12 +18,11 @@ string skaitymas(string Fname)
 //--------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------
-map<string,int> zodziai(const string& tekstas)
+map<string,int> zodziuPasikartojimas(const string& tekstas)
 {
     map<string,int> zodziu_sk;
     std::istringstream iss(tekstas);
     string zodis;
-
     while(iss>>zodis)
     {
         while (!isalnum(zodis.front()) && !zodis.empty())
@@ -54,7 +53,7 @@ void isvedimas(map<string, int> zodziu_kiekis, string fileName)
     {
         if (pair.second>1)
         {
-            outputFile<<pair.first<<": "<<pair.second<<" kartus"<<endl;
+            outputFile<<pair.first<<" : "<<pair.second<<" kartus"<<endl;
         }
     }
     outputFile.close();
@@ -70,14 +69,7 @@ void crossReference(const string& tekstas)
     int eilute = 1;
     while(getline(iss, zodis, ' '))
     {
-        while (!isalnum(zodis.front()) && !zodis.empty())
-        {
-            zodis.erase(zodis.begin());
-        }
-        while (!isalnum(zodis.back()) && !zodis.empty())
-        {
-            zodis.pop_back();
-        }
+        zodis.erase(remove_if(zodis.begin(), zodis.end(), ::ispunct), zodis.end());
         transform(zodis.begin(), zodis.end(), zodis.begin(), ::tolower);
         if (!zodis.empty())
         {
@@ -103,3 +95,15 @@ void crossReference(const string& tekstas)
     }
 }
 //----------------------------------------------------------------------------------------------------
+void rastiURL(const string& tekstas, set<string>& nuoroduAibe)
+{
+    regex url("(http|https|www)(/|//|://|.|:/)[a-zA-Z0-9./?=_-]+");
+    smatch atitikmuo;
+    auto paieskosPradzia=tekstas.cbegin();
+    while(regex_search(paieskosPradzia, tekstas.cend(), atitikmuo,url))
+    {
+        nuoroduAibe.insert(atitikmuo[0]);
+        paieskosPradzia=atitikmuo.suffix().first;
+    }
+}
+//-----------------------------------------------------------------------------------------------------

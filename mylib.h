@@ -21,11 +21,13 @@ using std::ifstream;
 using std::ofstream;
 using std::cerr;
 using std::set;
+using std::regex;
+using std::smatch;
 
 
 string skaitymas(string Fname);
-map<string,int> zodziai(const string& tekstas);
+map<string,int> zodziuPasikartojimas(const string& tekstas);
 void isvedimas(map<string, int> zodziu_kiekis, string fileName);
 void crossReference(const string& tekstas);
-
+void rastiURL(const string& tekstas, set<string>& nuoroduAibe);
 #endif // MYLIB_H_INCLUDED
