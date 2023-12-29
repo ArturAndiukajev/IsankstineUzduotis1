@@ -5,7 +5,7 @@
 3)Surasti visus URL'us tekste.
 Šioje uždotyje buvo nagrinėjami asociatyvūs konteineriai, kurie yra tinkamesni šiai uždočiai spręsti, negu nuoseklaus tipo konteineriai.
 
-Šiam uždaviniui buvo paimtas tekstas apie objektiškai orientotą programavimą c++ kalboje iš Vikipedijos : https://en.wikipedia.org/wiki/Object-oriented_programming ir tekstas apie tai kas yra URL : https://www.constantcontact.com/blog/website-what-is-a-url-link/ .
+Šiam uždaviniui buvo paimtas tekstas apie objektiškai orientotą programavimą C++ kalboje iš Vikipedijos : https://en.wikipedia.org/wiki/Object-oriented_programming ir tekstas apie tai kas yra URL : https://www.constantcontact.com/blog/website-what-is-a-url-link/ .
 
 Pasikartojančių žodžių paieškai buvo panaudotas konteineris map. Taip atrodo rezultatai:
 ![Screenshot_1](https://github.com/ArturAndiukajev/IsankstineUzduotis1/assets/144611797/1317c8a0-3b0c-4a89-9590-e9f7e194975a)
