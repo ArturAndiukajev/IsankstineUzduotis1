@@ -60,7 +60,7 @@ void isvedimas(map<string, int> zodziu_kiekis, string fileName)
 //----------------------------------------------------------------------------------------------
 
 //----------------------------------------------------------------------------------------------
-void crossReference(const string& tekstas)
+map<string, set<int>> crossReference(const string& tekstas)
 {
     std::istringstream iss(tekstas);
     map<string, set<int>> wordOccurrences;
@@ -85,18 +85,30 @@ void crossReference(const string& tekstas)
 
         eilute++;
     }
+    return wordOccurrences;
+}
+//----------------------------------------------------------------------------------------------------
 
-    cout << "Cross-reference tipo lentele:" << endl;
+//----------------------------------------------------------------------------------------------------
+void crossReferenceIsvedimas(map<string, set<int>>& wordOccurrences, string fileName)
+{
+    ofstream outputFile(fileName);
+    if (!outputFile.is_open())
+    {
+        cerr << "Failo atidarymo klaida: "<<fileName<<endl;
+        return;
+    }
+    outputFile << "Cross-reference tipo lentele:" << endl;
     for (const auto& pair : wordOccurrences)
     {
         if (pair.second.size() > 1)
         {
-            cout << pair.first << ": ";
+            outputFile << pair.first << ": ";
             for (int line : pair.second)
             {
-                cout << line << " ";
+                outputFile << line << " ";
             }
-            cout << endl;
+            outputFile << endl;
         }
     }
 }
@@ -106,7 +118,7 @@ void rastiURL(const string& tekstas, set<string>& nuoroduAibe)
     regex url("(http|https|www)(/|//|://|.|:/)[a-zA-Z0-9./?=_-]+");
     smatch atitikmuo;
     auto paieskosPradzia=tekstas.cbegin();
-    while(regex_search(tekstas.cbegin(), tekstas.cend(), atitikmuo,url))
+    while(regex_search(paieskosPradzia, tekstas.cend(), atitikmuo,url))
     {
         nuoroduAibe.insert(atitikmuo[0]);
         paieskosPradzia=atitikmuo.suffix().first;
