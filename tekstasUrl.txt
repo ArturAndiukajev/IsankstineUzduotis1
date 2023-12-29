@@ -1,0 +1,162 @@
+Whether you’re a business owner or blogger, you need your website to show up on Google’s search results if you want to grow your brand online. Search engine optimization (SEO) is the process that can make this happen. Website SEO has many different factors with the main one being that you create content on your website that is tailored to search terms that people are looking up. However, one element of SEO that’s easily overlooked is the URL. Though small, your website’s URL has a significant impact on your business’ success online.
+
+So what is a URL link? And how can you make yours SEO-friendly? This guide will teach you everything you need to know and break down the following:
+
+What is a website URL
+What are the three parts of a URL
+6 steps to creating an SEO-friendly URL for your website
+What is a website URL
+URL stands for “uniform resource locator.” A URL is the location of a web page or file that’s been added to the internet. You can see a web page’s URL in the address bar of your web browser. URLs contain three parts, each of which has an important connection to SEO.
+
+What are the three parts of a URL
+Every URL is made up of the following parts:
+
+The protocol identifier
+The domain name
+The slug
+Let’s see how each of these parts impacts your success on Google.
+
+1. The protocol identifier 
+A website’s protocol identifier tells a web browser how to send and receive information. Most websites use either “HTTP” or “HTTPS” as their protocol identifier. This portion of the URL is followed by a colon and two forward slashes, like this: 
+
+http://website.com
+https://website.com
+So what’s the difference between these two? 
+
+The addition of the “s” on the second protocol identifier means the website has an SSL security certificate. In other words, the entire website is encrypted for enhanced security. As a result, anyone who fills out a form on an HTTPS website knows their information, such as passwords and credit card numbers, is safe from prying eyes. 
+
+SEO tips for the protocol identifier
+To optimize your URL for SEO, you must use an HTTPS protocol identifier. Google values the additional layer of cyber-security because it protects its users. In fact, 93% of Google’s website results are made up of HTTPS websites. Since Google cares about HTTPS, you should too if you want to appear on their platform. 
+
+When you build a website with Constant Contact, your URL will use an HTTPS protocol identifier automatically, simplifying this part of the SEO process for you. 
+
+2. The domain name
+The second part of the URL is the domain name. This part tells you which website you’re on. If you were to simply type the domain name into your address bar, it would bring you to the website’s home page. The domain name consists of two parts: the website name and the “top-level domain” (TLD). 
+
+A TLD can take some of the following common forms: 
+
+.com – for most websites
+.edu – for educational websites
+.gov – for government websites
+When you put together the website name and the TLD, you get a domain name that looks like this: website.com.
+
+SEO tips for website names
+To optimize your website name for SEO, make sure it is:
+
+Short – Your website name should be 15 characters or less. 
+Easy to remember – If your website name is memorable, it increases the chances that someone will look it up. This means your website will get more traffic.
+Easy to spell – Avoid unusual spellings of words, even if they seem catchy or cool. If your website name is misspelled, you’ll lose out on valuable website traffic. 
+Made up of letters – Likewise, only use letters in your website name. Weird characters and numbers often confuse searchers. 
+On brand – Finally, you want visitors to recognize your website name easily and associate it with your brand immediately. 
+By prioritizing these qualities in your website name, you’ll attract more website traffic and boost your appearances. 
+
+SEO tips for TLDs
+Next, choose your TLD strategically. The most common one is “.com,” so it’s the easiest one for website users to remember. However, “.edu” and “.gov” can add an air of authority to your website. Try to avoid other non-“.com” TLDs, such as “.biz” or “.info” since they receive significantly less website traffic and appear spammy.
+
+3. The path (a.k.a the slug)
+The third and final portion of the URL is called the path, though it’s better known in the marketing world as “the slug.” But what is a URL slug? Despite having a silly name, it’s one of the most serious elements of your URL in terms of SEO. 
+
+The slug is responsible for telling a web browser which page to go to within a specific website. It’s the part that follows the TLD, shown here: https://www.website.com/blog/keyword.
+
+An SEO-friendly slug is specific, relevant, and short. It tells Google and website users what the associated web page is all about. Because it’s so important, let’s discuss its optimization in a little more detail. 
+
+6 steps to creating an SEO-friendly URL for your website
+Here’s how you can perfect your URL slug to align with our SEO tips. 
+
+Step 1: Use your target keyword in the slug
+A target keyword will be the word that best describes the content on your website page. Having a target keyword for your website page(s) is important because it allows Google to best understand how to serve your website in the search engine. If you are an art teacher and want to appear in the search engine for “art lessons,” one of your website pages should focus on that keyword.
+
+In this case, your slug should include the keyword “art lessons” and look like this: https://www.website.com/art-lessons
+
+The URL is one of the most important places to include your target keyword in the SEO website design. Since the URL has such little real estate (compared to your web page’s copy, SEO title tag, and meta description), using your keyword in this location holds a lot of weight. Google takes note of this. 
+
+Furthermore, website users also look to your slug to get a synopsis of what your web page is about. If it contains the keyword, they’ll know your web page is relevant to their search. 
+
+Avoid keyword stuffing
+Keyword stuffing is the practice of using your keyword excessively in an attempt to appear more on Google’s search results. However, this is a red flag in Google’s eyes. Keyword stuffing is a “black hat” SEO practice, meaning Google disapproves of it and will decrease your visibility in the search engine if they catch you doing it. 
+
+A URL with keyword stuffing looks something like this: https://www.website.com/art-lessons-art-lessons-art-lessons
+
+Step 2: Make your slug as short as possible
+An SEO-friendly slug is short. Why is this? A short slug looks better to website users and search engines since it’s easier to read. By keeping the text short, you also avoid truncating your URL link. When users can see your entire URL link, they feel more comfortable clicking on it.
+
+Compare these two URLs and decide for yourself which one is more readable and attractive:
+
+https://www.website.com/why-should-you-hire-a-professional-dog-walker-when-you-work-from-home-and-other-important-dog-walking-information
+https://www.website.com/professional-dog-walker
+The shorter URL is less overwhelming in text and therefore much more readable. 
+
+Avoid using “stop words”
+To streamline your slug, remove any “stop words.” A stop word is a word that breaks up the keyword within your slugs, such as a conjunction or preposition. Some common examples are:
+
+“the”
+“and”
+“in”
+“at”
+“as”
+“for”
+Etc.
+By removing stop words, you simplify your slug, while still maintaining its general meaning. In turn, readers will still be able to understand what the web page is about. For example, let’s say your target keyword is “best personal trainer new york.” The resulting URL could look like these:
+
+URL with stop words: https://www.website.com/the-best-personal-trainer-in-new-york
+URL without stop words: https://www.website.com/best-personal-trainer-new-york
+In this case, “the” and “in” are the stop words. By removing them, you simplify your URL and still make the topic clear to Google and its users. 
+
+Step 3: Use a hyphen to separate the words in your slug
+To improve your URL’s readability even further, make sure you separate all the words within your slug using a hyphen. There are other types of valid punctuation you could use instead, but hyphens are the first choice for SEO purposes. That’s because they’re the easiest for people to read. 
+
+In turn, most website builders automatically use hyphens in their URLs, including Constant Contact. 
+
+Step 4: Use all lowercase letters in your URL slug
+Websites often have multiple versions of URLs. Some might be in all lowercase letters, while others use a few uppercase letters. Take a look:
+
+Variation 1: https://www.website.com/keyword-keyword 
+Variation 2: https://www.website.com/Keyword-Keyword
+Your URLs should be in all lowercase letters. Why is this?
+
+Most internet users type in lowercase when they search online. If they search for your URL in lowercase, but your official URL uses uppercase letters, they will find themselves on a 404 error page. 
+
+Step 5: Avoid using dynamic parameters
+Dynamic parameters are instructions within a URL slug that tell the web browser to jump to a specific part of a web page. For example, if you have a long web page, a dynamic parameter could bring a user to a specific section halfway down. 
+
+It’s easy to identify dynamic parameters in your URL since they contain the following characters:
+
+Question marks (?)
+Ampersands (&)
+Equals signs (=)
+In a URL slug, they will look like this:
+
+No dynamic parameters: https://www.website.com/keyword
+Dynamic parameters: https://www.website.com/keyword1?keyword2=word&word2
+Why you should avoid them at all costs
+A URL with dynamic parameters looks messy and is much harder to read. Dynamic parameters also hinder keyword optimization. You probably couldn’t guess what the target keyword was in the dynamic parameter URL and neither could Google. 
+
+Not to mention, dynamic parameters make URLs much longer, which we’ve already established is a bad move for SEO.
+
+Step 6: Optimize your URL structure by reducing your folders in the slug
+An SEO-friendly URL is as streamlined as possible. This means it doesn’t use unnecessary folders. To identify a folder within a URL slug, look for forward slashes: “/.” Why would your website URL use folders in the first place? 
+
+Let’s say you run a pet sitting business and care for several types of pets, including dogs, cats, and birds. On your website, you have a general pet sitting service page that links to pet-specific subpages. Thus, the resulting URLs look like this:
+
+https://website.com/pet-sitting/dogs
+https://website.com/pet-sitting/cats
+https://website.com/pet-sitting/birds
+To simplify your URLs, remove the “pet-sitting” folder from the slug and just use the target keyword on its own. This way, your slugs will look like this:
+
+https://website.com/dogs
+https://website.com/cats
+https://website.com/birds
+Why should you reduce folders within your URL structure?
+Unnecessary folders take focus away from your web page’s target keyword. By having more unneeded words in there (like the ones in the folder), Google will judge your web page as less relevant for the web page’s target keyword. Thus, your web page will appear lower than competing pages that only use the target keyword in their slug. 
+
+Create an SEO-friendly URL link today
+Now you know what a URL link is and the basic rules for generating SEO-friendly URLs. By keeping your URLs short, focused, and keyword-oriented, you’ll increase your website’s appearance and be one step closer to attracting more traffic from Google.
+
+When you use Constant Contact’s SEO-friendly website builder, you’ll be able to construct a custom URL for each web page that is optimized for SEO. Plus, Constant Contact’s robust support services can help you with any optimization questions you have. To create your new SEO-friendly custom website, just follow these steps:
+
+Utilize Constant Contact’s website builder
+Choose and register your SEO-optimized domain name 
+Optimize your URL for SEO
+Purchase and publish your website
+Begin to attract new, free visitors from Google to your website!
+Once you’ve completed these steps, you’ll receive a beautiful custom website that’s ready to appear on Google’s search results ASAP. Also, you’ll gain access to many of Constant Contact’s insightful website performance tools and resources.

@@ -4,37 +4,37 @@
 string skaitymas(string Fname)
 {
     ifstream input_file(Fname);
-    if (!input_file.is_open())
+    if(!input_file.is_open())
     {
-        cerr << "Failo atidarymas negalimas: " << Fname << endl;
+        cerr <<"Failo atidarymas negalimas: "<<Fname<<endl;
         exit(1);
     }
     std::stringstream bufferis;
-    bufferis << input_file.rdbuf();
-    string tekstas = bufferis.str();
+    bufferis<<input_file.rdbuf();
+    string tekstas=bufferis.str();
     input_file.close();
     return tekstas;
 }
 //--------------------------------------------------------------------------------------
 
 //--------------------------------------------------------------------------------------
-map<string, int> zodziuPasikartojimas(const string& tekstas) {
+map<string, int> zodziuPasikartojimas(const string& tekstas)
+{
     map<string, int> zodziu_sk;
     std::istringstream iss(tekstas);
     string zodis;
-    while (iss >> zodis)
+    while(iss>>zodis)
     {
         // simboliai pradzioj
         zodis.erase(zodis.begin(), std::find_if(zodis.begin(), zodis.end(), ::isalpha));
         //simboliai pabaigoj
         zodis.erase(std::find_if(zodis.rbegin(), zodis.rend(), ::isalpha).base(), zodis.end());
         std::transform(zodis.begin(), zodis.end(), zodis.begin(), ::tolower);
-        if (!zodis.empty())
+        if(!zodis.empty())
         {
             zodziu_sk[zodis]++;
         }
     }
-
     return zodziu_sk;
 }
 //------------------------------------------------------------------------------------------
@@ -43,14 +43,14 @@ map<string, int> zodziuPasikartojimas(const string& tekstas) {
 void isvedimas(map<string, int> zodziu_kiekis, string fileName)
 {
     ofstream outputFile(fileName);
-    if (!outputFile.is_open())
+    if(!outputFile.is_open())
     {
-        cerr << "Failo atidarymo klaida: "<<fileName<<endl;
+        cerr<<"Failo atidarymo klaida: "<<fileName<<endl;
         return;
     }
-    for (const auto& pair : zodziu_kiekis)
+    for(const auto& pair:zodziu_kiekis)
     {
-        if (pair.second>1)
+        if(pair.second>1)
         {
             outputFile<<pair.first<<" : "<<pair.second<<" kartus"<<endl;
         }
@@ -66,23 +66,19 @@ map<string, set<int>> crossReference(const string& tekstas)
     map<string, set<int>> wordOccurrences;
     string zodis;
     int eilute = 1;
-
-    while (getline(iss, zodis, '\n'))
+    while(getline(iss, zodis, '\n'))
     {
         std::istringstream lineStream(zodis);  // kiekviena eil atskirai
-
-        while (lineStream >> zodis)
+        while(lineStream>>zodis)
         {
             zodis.erase(remove_if(zodis.begin(), zodis.end(), ::ispunct), zodis.end());
             zodis.erase(std::find_if(zodis.rbegin(), zodis.rend(), ::isalpha).base(), zodis.end());
             transform(zodis.begin(), zodis.end(), zodis.begin(), ::tolower);
-
-            if (!zodis.empty())
+            if(!zodis.empty())
             {
                 wordOccurrences[zodis].insert(eilute);
             }
         }
-
         eilute++;
     }
     return wordOccurrences;
@@ -93,25 +89,27 @@ map<string, set<int>> crossReference(const string& tekstas)
 void crossReferenceIsvedimas(map<string, set<int>>& wordOccurrences, string fileName)
 {
     ofstream outputFile(fileName);
-    if (!outputFile.is_open())
+    if(!outputFile.is_open())
     {
-        cerr << "Failo atidarymo klaida: "<<fileName<<endl;
+        cerr<<"Failo atidarymo klaida: "<<fileName<<endl;
         return;
     }
-    outputFile << "Cross-reference tipo lentele:" << endl;
-    for (const auto& pair : wordOccurrences)
+    outputFile<<"Cross-reference tipo lentele:"<<endl;
+    for(const auto& pair:wordOccurrences)
     {
-        if (pair.second.size() > 1)
+        if(pair.second.size() > 1)
         {
-            outputFile << pair.first << ": ";
-            for (int line : pair.second)
+            outputFile<<pair.first<< ": ";
+            for(int line:pair.second)
             {
-                outputFile << line << " ";
+                outputFile<<line<<" ";
             }
-            outputFile << endl;
+            outputFile<<endl;
         }
     }
 }
+//----------------------------------------------------------------------------------------------------
+
 //----------------------------------------------------------------------------------------------------
 void rastiURL(const string& tekstas, set<string>& nuoroduAibe)
 {
@@ -130,12 +128,12 @@ void rastiURL(const string& tekstas, set<string>& nuoroduAibe)
 void isvedimasURL(set<string>& nuoroduAibe, string fileName)
 {
     ofstream outputFile(fileName);
-    if (!outputFile.is_open())
+    if(!outputFile.is_open())
     {
-        cerr << "Failo atidarymo klaida: "<<fileName<<endl;
+        cerr<<"Failo atidarymo klaida: "<<fileName<<endl;
         return;
     }
-    for(const auto& url: nuoroduAibe)
+    for(const auto& url:nuoroduAibe)
     {
         outputFile<<url<<endl;
     }

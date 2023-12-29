@@ -28,7 +28,7 @@ string skaitymas(string Fname);
 map<string,int> zodziuPasikartojimas(const string& tekstas);
 void isvedimas(map<string, int> zodziu_kiekis, string fileName);
 map<string, set<int>> crossReference(const string& tekstas);
+void crossReferenceIsvedimas(map<string, set<int>>& wordOccurrences, string fileName);
 void rastiURL(const string& tekstas, set<string>& nuoroduAibe);
 void isvedimasURL(set<string>& nuoroduAibe, string fileName);
-void crossReferenceIsvedimas(map<string, set<int>>& wordOccurrences, string fileName);
 #endif // MYLIB_H_INCLUDED
