@@ -71,7 +71,7 @@ map<string, set<int>> crossReference(const string& tekstas)
         std::istringstream lineStream(zodis);  // kiekviena eil atskirai
         while(lineStream>>zodis)
         {
-            zodis.erase(remove_if(zodis.begin(), zodis.end(), ::ispunct), zodis.end());
+            zodis.erase(zodis.begin(), std::find_if(zodis.begin(), zodis.end(), ::isalpha));
             zodis.erase(std::find_if(zodis.rbegin(), zodis.rend(), ::isalpha).base(), zodis.end());
             transform(zodis.begin(), zodis.end(), zodis.begin(), ::tolower);
             if(!zodis.empty())
@@ -140,3 +140,37 @@ void isvedimasURL(set<string>& nuoroduAibe, string fileName)
     outputFile.close();
 }
 //---------------------------------------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------------------------------------
+void zodziuRadimas(set<string>& zodziuAibe, string dalis, string tekstas)
+{
+    std::istringstream iss(tekstas);
+    string zodis;
+    while(iss>>zodis)
+    {
+        zodis.erase(zodis.begin(), std::find_if(zodis.begin(), zodis.end(), ::isalpha));
+        zodis.erase(std::find_if(zodis.rbegin(), zodis.rend(), ::isalpha).base(), zodis.end());
+        std::transform(zodis.begin(), zodis.end(), zodis.begin(), ::tolower);
+        if (zodis.find(dalis) != std::string::npos)
+        {
+            zodziuAibe.insert(zodis);
+        }
+    }
+}
+//----------------------------------------------------------------------------------------------------------
+
+//----------------------------------------------------------------------------------------------------------
+void zodziuIsvedimas(set<string>& zodziuAibe, string fileName)
+{
+     ofstream outputFile(fileName);
+    if(!outputFile.is_open())
+    {
+        cerr<<"Failo atidarymo klaida: "<<fileName<<endl;
+        return;
+    }
+    for(const auto& zodis:zodziuAibe)
+    {
+        outputFile<<zodis<<endl;
+    }
+    outputFile.close();
+}

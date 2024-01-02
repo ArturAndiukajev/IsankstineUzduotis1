@@ -31,4 +31,6 @@ map<string, set<int>> crossReference(const string& tekstas);
 void crossReferenceIsvedimas(map<string, set<int>>& wordOccurrences, string fileName);
 void rastiURL(const string& tekstas, set<string>& nuoroduAibe);
 void isvedimasURL(set<string>& nuoroduAibe, string fileName);
+void zodziuRadimas(set<string>& zodziuAibe, string dalis, string tekstas);
+void zodziuIsvedimas(set<string>& zodziuAibe, string fileName);
 #endif // MYLIB_H_INCLUDED

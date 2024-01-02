@@ -14,6 +14,11 @@ int main()
         tekstas=skaitymas(failoPav);
         map<string, int> zodziu_kiekis = zodziuPasikartojimas(tekstas);
         map<string, set<int>> lentele = crossReference(tekstas);
+        cout<<"Iveskite zodzio dali, pagal kuria norite surasti zodzius: "<<endl;
+        string dalis;
+        cin>>dalis;
+        set<string> zodziuAibe;
+        zodziuRadimas(zodziuAibe,dalis,tekstas);
         cout<<"Ar norite isvesti rezultatus i failus ar i ekrana? Jeigu i failus - rasykite F, jeigu i ekrana - E."<<endl;
         char pasirinkimas2;
         cin>>pasirinkimas2;
@@ -21,6 +26,7 @@ int main()
         {
            isvedimas(zodziu_kiekis, "rezultatai.txt");
            crossReferenceIsvedimas(lentele,"rezCrossRef.txt");
+           zodziuIsvedimas(zodziuAibe,"rezultataiZodziai.txt");
         }
         else if(pasirinkimas2=='E'||pasirinkimas2=='e')
         {
@@ -47,6 +53,12 @@ int main()
                 }
             }
             cout<<"-----------------------------------------------------------------------"<<endl;
+            cout<<"Zodziai su "<< dalis<< " dalimi"<<endl;
+            for(const auto& zodis:zodziuAibe)
+            {
+                cout<<zodis<<endl;
+            }
+            cout<<"--------------------------------------------------------------------------------"<<endl;
         }
         else
         {
